@@ -17,6 +17,7 @@ import { Route as ProgressRouteImport } from './routes/progress'
 import { Route as NutritionRouteImport } from './routes/nutrition'
 import { Route as CaloriesRouteImport } from './routes/calories'
 import { Route as BmiRouteImport } from './routes/bmi'
+import { Route as AiCoachRouteImport } from './routes/ai-coach'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -60,6 +61,11 @@ const BmiRoute = BmiRouteImport.update({
   path: '/bmi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiCoachRoute = AiCoachRouteImport.update({
+  id: '/ai-coach',
+  path: '/ai-coach',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -74,6 +80,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-coach': typeof AiCoachRoute
   '/bmi': typeof BmiRoute
   '/calories': typeof CaloriesRoute
   '/nutrition': typeof NutritionRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-coach': typeof AiCoachRoute
   '/bmi': typeof BmiRoute
   '/calories': typeof CaloriesRoute
   '/nutrition': typeof NutritionRoute
@@ -99,6 +107,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-coach': typeof AiCoachRoute
   '/bmi': typeof BmiRoute
   '/calories': typeof CaloriesRoute
   '/nutrition': typeof NutritionRoute
@@ -113,6 +122,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ai-coach'
     | '/bmi'
     | '/calories'
     | '/nutrition'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ai-coach'
     | '/bmi'
     | '/calories'
     | '/nutrition'
@@ -137,6 +148,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ai-coach'
     | '/bmi'
     | '/calories'
     | '/nutrition'
@@ -150,6 +162,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AiCoachRoute: typeof AiCoachRoute
   BmiRoute: typeof BmiRoute
   CaloriesRoute: typeof CaloriesRoute
   NutritionRoute: typeof NutritionRoute
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BmiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-coach': {
+      id: '/ai-coach'
+      path: '/ai-coach'
+      fullPath: '/ai-coach'
+      preLoaderRoute: typeof AiCoachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -238,6 +258,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AiCoachRoute: AiCoachRoute,
   BmiRoute: BmiRoute,
   CaloriesRoute: CaloriesRoute,
   NutritionRoute: NutritionRoute,
