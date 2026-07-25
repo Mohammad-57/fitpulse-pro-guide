@@ -27,3 +27,10 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
+
+DEMO LINK OF MY APP
+https://fitpulse-pro-guide.lovable.app
+
+
+AURTHOR
+AYAAN HAMEED (WALEED AHMED)
