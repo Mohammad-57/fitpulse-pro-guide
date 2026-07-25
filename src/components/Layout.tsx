@@ -4,6 +4,7 @@ import { Moon, Sun, Menu, X, Flame, ArrowUp, Github } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home" },
+  { to: "/ai-coach", label: "AI Coach" },
   { to: "/bmi", label: "BMI" },
   { to: "/calories", label: "Calories" },
   { to: "/water", label: "Water" },
@@ -13,6 +14,7 @@ const NAV = [
   { to: "/progress", label: "Progress" },
   { to: "/about", label: "About" },
 ] as const;
+
 
 function useTheme() {
   const [dark, setDark] = useState(false);
@@ -141,8 +143,10 @@ function Footer() {
           <div>
             <h4 className="text-sm font-semibold">Learn</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li><Link to="/ai-coach" className="hover:text-foreground">AI Fitness Coach</Link></li>
               <li><Link to="/workouts" className="hover:text-foreground">Workout Planner</Link></li>
               <li><Link to="/nutrition" className="hover:text-foreground">Nutrition Guide</Link></li>
+
               <li><Link to="/tips" className="hover:text-foreground">Fitness Tips</Link></li>
               <li><Link to="/about" className="hover:text-foreground">About</Link></li>
             </ul>
