@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       { title: "FitPulse — Your Premium Fitness Companion" },
       { name: "description", content: "Calculate BMI, calories, water intake. Plan workouts, track progress, and get expert nutrition tips — all in one beautifully simple dashboard." },
       { property: "og:title", content: "FitPulse — Your Premium Fitness Companion" },
-      { property: "og:description", content: "All-in-one fitness dashboard with calculators, planners and progress tracking." },
+      { property: "og:description", content: "Calculate BMI, calories, water intake. Plan workouts, track progress, and get expert nutrition tips — all in one beautifully simple dashboard." },
     ],
   }),
   component: Home,
